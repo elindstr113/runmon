@@ -23,6 +23,10 @@ class WeeklyTotals:
         dbRow = dbCursor.fetchone()
         wtdMiles, mtdMiles, ytdMiles, totalMiles = dbRow
         dbCursor.close()
+        dbYearCursor = dbConn.cursor()
+        dbYearCursor.execute("CALL usp_GetYearBreakdown")
+        dbYearSummary = dbYearCursor.fetchall()
+        dbYearCursor.close()
         dbConn.close()
         results = []
         results.append("\n      Running Totals")
@@ -34,7 +38,14 @@ class WeeklyTotals:
             results.append(("Month: " + numberFormat).format(mtdMiles))
         if (ytdMiles):
             results.append(("Year : " + numberFormat).format(ytdMiles))
+        if (dbYearSummary):
+            results.append("\n   Breakdown By Year")
+            results.append("=" * 23)
+            numberFormat = "{:18,.2f}"
+            for dbRow in dbYearSummary:
+                results.append((str(dbRow[0]) + ":" +
+                                numberFormat).format(dbRow[1]))
+        results.append("-" * 23)
         if (totalMiles):
-            results.append(("Total: " + numberFormat).format(totalMiles))
-
+            results.append(("Total: " + "{:16,.2f}").format(totalMiles))
         return results

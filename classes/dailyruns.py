@@ -4,7 +4,7 @@ import netrc
 
 
 class DailyRuns(object):
-    """description of class"""
+    """Creates a table of daily runs for a Rolling Week"""
 
     @staticmethod
     def GetDailyRuns():
@@ -28,7 +28,7 @@ class DailyRuns(object):
 
         numberFormat = "{:6,.2f}"  # 6 characters wide, two decimal places
         weekTotal = 0
-        results = ["\n     Rolling Week\n" + ("=" * 23)]
+        results = ["     Rolling Week\n" + ("=" * 23)]
         for d in wk:
             data = [row for row in dbRows if row[0] == d]
             if (len(data)):
