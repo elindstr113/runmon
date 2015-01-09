@@ -42,5 +42,5 @@ class DailyRuns(object):
             else:
                 results.append(d)
         results.append(("-" * 23) +
-                       ("\n   Total: " + numberFormat).format(weekTotal))
+                       ("\n    Total: " + numberFormat).format(weekTotal))
         return results

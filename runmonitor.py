@@ -3,9 +3,10 @@
 ###################################################################
 # Author:      Eric Lindstrom
 # Date:        Spring 2013
-# Description: Utility to check the WTD number of miles I've run
-#              and save status in a text file. The text file is then
-#              read in and displayed on the desktop using conky
+# Description: Utility to check the number of miles I've run for a
+#              given day, month, year. Also, breaks down miles per
+#              year. Additionally, displays a rolling 7 days worth
+#              of log entries.
 ##################################################################
 
 
