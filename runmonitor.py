@@ -37,7 +37,7 @@ def main(fileName):
     fileContents.append("")
     fileContents += DailyRuns.GetDailyRuns()
     WriteOutputFile(fileName, fileContents)
-    #WriteToConsole(fileContents)
+    WriteToConsole(fileContents)
     return True
 
 if __name__ == '__main__':
