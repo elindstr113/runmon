@@ -2,7 +2,7 @@
 
 ###################################################################
 # Author:      Eric Lindstrom
-# Date:        Spring 2013
+# Date:        Spring 2014
 # Description: Utility to check the number of miles I've run for a
 #              given day, month, year. Also, breaks down miles per
 #              year. Additionally, displays a rolling 7 days worth
@@ -37,7 +37,7 @@ def main(fileName):
     fileContents.append("")
     fileContents += DailyRuns.GetDailyRuns()
     WriteOutputFile(fileName, fileContents)
-    WriteToConsole(fileContents)
+    #WriteToConsole(fileContents)
     return True
 
 if __name__ == '__main__':
